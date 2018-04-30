@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/BltONOFF"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/blue1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BltDiscovery"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/discover"
+        app:layout_constraintStart_toEndOf="@+id/BltONOFF"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/WifiONOFF"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/wifi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BltONOFF" />
+
+    <Button
+        android:id="@+id/DiscoverWifiDevices"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@+id/WifiONOFF"
+        android:layout_alignBottom="@+id/WifiONOFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/wifidev"
+        android:cursorVisible="false"
+        app:layout_constraintStart_toEndOf="@+id/WifiONOFF"
+        app:layout_constraintTop_toBottomOf="@+id/BltDiscovery" />
+
+    <Button
+        android:id="@+id/CreateBltConnection"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/blueconnect"
+        app:layout_constraintStart_toEndOf="@+id/DiscoverBltDev"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/DiscoverBltDev"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/bluedevices"
+        app:layout_constraintStart_toEndOf="@+id/BltDiscovery"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ListView
+        android:id="@+id/BltDeviceLst"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WifiONOFF"
+        tools:ignore="RtlCompat" />
+
+    <ListView
+        android:id="@+id/WifiDeviceLst"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/WifiONOFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BltDeviceLst"
+        tools:ignore="RtlCompat" />
+
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/BltDeviceLst"
+        android:layout_marginBottom="5dp"
+        android:hint="Enter Text Here"
+        android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSend"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSend"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/BltDeviceLst"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_toRightOf="@+id/editText"
+        android:background="@drawable/send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText" />
+
+
+    <TextView
+        android:id="@+id/incomingMessage"
+        android:layout_width="412dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/BltDeviceLst"
+        android:layout_marginTop="32dp"
+        android:inputType="textMultiLine"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WifiDeviceLst"
+        tools:ignore="RtlCompat" />
+
+
+</android.support.constraint.ConstraintLayout>
