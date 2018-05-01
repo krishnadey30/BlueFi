@@ -343,6 +343,7 @@ public class MainActivity extends AppCompatActivity {
                 etext.setText("");
             }
         });
+
     }
 
 
